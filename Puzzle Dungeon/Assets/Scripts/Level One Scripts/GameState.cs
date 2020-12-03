@@ -17,10 +17,19 @@ public class GameState : MonoBehaviour
     [SerializeField] private Image BronzeStar;
     
     [SerializeField] private Canvas LevelOverUI;
+
+    [SerializeField] private HighScoreTemplate scoreHandler;
+    [SerializeField] private TMP_InputField playerName;
+    [SerializeField] private Button submitName;
+    private string nickname;
+    private float finalTime;
+    
+
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        submitName.onClick.AddListener(setName);
     }
 
     // Update is called once per frame
@@ -33,7 +42,7 @@ public class GameState : MonoBehaviour
     {
         playerMovement.enabled = false;
         string Star = levelManager.GetStar(levelManager.levelTime);
-        float finalTime = levelManager.roundedTime;
+        finalTime = levelManager.roundedTime;
         FinalTimeText.text = "Your time was: " + finalTime.ToString();
         levelManager.enabled = false;
         if (Star != "No Star")
@@ -58,6 +67,15 @@ public class GameState : MonoBehaviour
         }
 
         LevelOverUI.gameObject.SetActive(true);
+        playerName.ActivateInputField();
+        
+        
 
+    }
+
+    private void setName()
+    {
+        nickname = playerName.text;
+        scoreHandler.HighScoreWrite(finalTime, nickname);
     }
 }
