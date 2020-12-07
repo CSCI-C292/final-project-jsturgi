@@ -5930,6 +5930,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1134260723}
   - component: {fileID: 1134260722}
+  - component: {fileID: 1134260724}
+  - component: {fileID: 1134260725}
   m_Layer: 0
   m_Name: ScoreHandler
   m_TagString: Untagged
@@ -5951,7 +5953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   nickname: 
-  scoreTable: {fileID: 0}
+  scoreTable: {fileID: 1134260724}
 --- !u!4 &1134260723
 Transform:
   m_ObjectHideFlags: 0
@@ -5966,6 +5968,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1134260724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134260721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cb1522748950fd4db0bfe157547c553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScoreEntries: []
+--- !u!114 &1134260725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134260721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5305c7a6319ca54c9ce623414aa6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1203109208
 GameObject:
   m_ObjectHideFlags: 0
@@ -7379,7 +7406,7 @@ MonoBehaviour:
   LevelOverUI: {fileID: 1756176466}
   scoreHandler: {fileID: 1134260722}
   playerName: {fileID: 833314850}
-  submitName: {fileID: 0}
+  submitName: {fileID: 1783086786}
 --- !u!224 &2126013188
 RectTransform:
   m_ObjectHideFlags: 0
