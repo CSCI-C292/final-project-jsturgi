@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
@@ -67,15 +68,26 @@ public class GameState : MonoBehaviour
         }
 
         LevelOverUI.gameObject.SetActive(true);
-        playerName.ActivateInputField();
-        
-        
+        //playerName.ActivateInputField();
+
+        EndLevel();
 
     }
+        
+    
 
     private void setName()
     {
         nickname = playerName.text;
         scoreHandler.HighScoreWrite(finalTime, nickname);
     }
+
+    private IEnumerator EndLevel()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("Levels");
+        
+    }
+
+
 }
