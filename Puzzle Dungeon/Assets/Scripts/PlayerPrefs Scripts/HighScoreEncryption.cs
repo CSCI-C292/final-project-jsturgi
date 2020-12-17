@@ -20,10 +20,10 @@ public class HighScoreEncryption : MonoBehaviour
         
     }
 
-    public void SetPlayerPrefs(string name, string time, string rank)
+    public void SetPlayerPrefs(string scoreList)
     {
-        ZPlayerPrefs.SetString(name, name);
-        ZPlayerPrefs.SetString(time, time);
-        ZPlayerPrefs.SetString(rank, rank);
+        ZPlayerPrefs.SetString("scoreList", scoreList);
+        ZPlayerPrefs.Save();
+        
     }
 }

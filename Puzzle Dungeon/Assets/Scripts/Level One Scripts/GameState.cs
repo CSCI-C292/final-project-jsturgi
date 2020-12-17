@@ -21,15 +21,15 @@ public class GameState : MonoBehaviour
     [SerializeField] private HighScoreTemplate scoreHandler;
     [SerializeField] private TMP_InputField playerName;
     [SerializeField] private Button submitName;
-    private string nickname;
-    private float finalTime;
+    public string nickname;
+    public float finalTime;
     
 
     
     // Start is called before the first frame update
     void Start()
     {
-        submitName.onClick.AddListener(setName);
+       // submitName.onClick.AddListener(setName);
     }
 
     // Update is called once per frame

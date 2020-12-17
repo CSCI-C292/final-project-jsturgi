@@ -45,5 +45,7 @@ public class PlayerCollision : MonoBehaviour
         {
             gameState.LevelOver();
         }
+
+        
     }
 }
